@@ -1,0 +1,59 @@
+﻿@model PixelSnap_PassionProject.Models.Gallery
+@{
+    ViewBag.Title = "Show";
+}
+
+
+<div class="headerContainer">
+    <h1>@Model.GalleryName</h1>
+    <br />
+    <div>@Html.Raw(Model.GalleryDescription)</div>
+    <br/>
+    <div class="date">
+        <span>Category: @Model.GalleryCatergory</span>
+        <br/>
+        <span>Date Created: @Model.DateCreated</span>
+    </div>
+    <br />
+</div>
+<div class="createMethod">
+    <span class="actionLink">@Html.ActionLink("Back to Gallery Lists", "List", "Gallery")</span>
+    <span class="actionLink">@Html.ActionLink("Edit Gallery", "Edit/" + Model.GalleryID)</span>
+    <span class="actionLink">@Html.ActionLink("Delete Gallery", "Delete/" + Model.GalleryID)</span>
+</div>
+
+<div class="createMethod">
+    @Html.ActionLink("Add More Images!", "Create/", "Image")
+</div>
+<!--THIS WILL SHOW AND DISPLAY ALL THE IMAGES ASSOCIATED TO THIS GALLERY-->
+<!--THIS IS THE ONE GALLERY TO MANY IMAGES-->
+<div>
+    @foreach (var gallery in Model.Images)
+    {
+
+    }
+</div>
+
+<div>
+    @foreach (var image in Model.Images)
+     {
+        <div class="showImageCard">
+            <div>
+                <h2 class="showLabel">@Html.ActionLink(image.ImageName, "Show/" + image.ImageID, "Image")</h2>
+            </div>
+            <div class="showImageContainer">
+                <a href="@Url.Action("Show/" + image.ImageID, "Image")">
+                    <img id="logo" src="~/ImageUploads/images/@Url.Content(image.ImagePath)" class="showImage" />
+                </a>
+            </div>
+
+            <div class="showLink">
+                <a href="@Url.Action("Show/" + image.ImageID, "Image")" class="fas fa-eye" title="View"></a>
+                <a href="@Url.Action("Edit/" + image.ImageID, "Image")" class="fas fa-edit" title="Edit"></a>
+                <a href="@Url.Action("Delete/" + image.ImageID, "Image")" class="fas fa-trash" title="Delete"></a>
+            </div>
+
+        </div>
+     }
+</div>
+

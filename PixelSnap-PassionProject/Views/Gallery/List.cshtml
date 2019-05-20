@@ -1,0 +1,35 @@
+﻿@model IEnumerable<PixelSnap_PassionProject.Models.Gallery>
+@{
+    ViewBag.Title = "Galleries";
+}
+
+<div class="headerContainerMain">
+    <h1>Galleries</h1>
+    <br />
+</div>
+<div class="createMethod">
+    @Html.ActionLink("Create Gallery", "Create", "gallery")
+</div>
+
+<!--THIS IS A LIST OF GALLERIES THAT WAS CREATED-->
+<div class="galleryList">
+    @foreach (var gallery in Model)
+    {
+        <div class="showImageCardGallery">
+            <div>
+                <h2 class="showLabelGallery">@Html.ActionLink(gallery.GalleryName, "Show/" + gallery.GalleryID)</h2>
+            </div>
+            <div class="showImageContainer">
+                <a href="@Url.Action("Show/" + gallery.GalleryID)">
+                    <img id="logo" src="~/ImageUploads/gallery-image/@Url.Content(gallery.ImagePath)" class="showImageGallery" />
+                </a>
+            </div>
+            <div class="showLinkGallery">
+                <a href="@Url.Action("Show/" + gallery.GalleryID)" class="fas fa-eye" title="View"></a>
+                <a href="@Url.Action("Edit/" + gallery.GalleryID)" class="fas fa-edit" title="Edit"></a>
+                <a href="@Url.Action("Delete/" + gallery.GalleryID)" class="fas fa-trash" title="Delete"></a>
+            </div>
+
+        </div>
+    }
+</div>

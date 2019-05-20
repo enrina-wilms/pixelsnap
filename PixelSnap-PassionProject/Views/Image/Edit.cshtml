@@ -1,0 +1,78 @@
+﻿@model PixelSnap_PassionProject.Models.ViewModels.ImageEdit
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<h2>Update Image</h2>
+
+@using (Html.BeginForm("Edit", "Image", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="inputDiv">
+        <label class="labelName">Image Name</label>
+        <div class="inputBreak">
+            <input id="ImageName_new" name="ImageName_new" value="@Model.Image.ImageName" />
+        </div>
+    </div>
+
+    <!--I WANT TO DISPLAY THE CURRENT SELECTED GALLERY BY IM GEETING ERRORS I AM NOT SURE WHAT I DID WRONG OR IM MISSING SOMETHING-->
+    @*<div class="inputDiv">
+            <label class="labelName">Gallery</label>
+            <div class="inputBreak">
+                <select id="ImageGallery_New" name="ImageGallery_New">
+                    @foreach (var gallery in Model.gallery)
+                    {
+                        string selected = "";
+                        if (gallery.GalleryID == Model.Image.gallery.GalleryID)
+                        {
+                            selected = "selected";
+                        }
+                        <option value="@gallery.GalleryID" @selected>@gallery.GalleryName</option>
+                    }
+                </select>
+            </div>
+        </div>*@
+    // HOW TO GET THE SELECTED VALUE FOR HARD CODED DROPDOWNLIST?
+    //THIS PART I WANT TO MAKE ANOTHER MODEL IN THE FUTURE AND CONNECT IT TO GALLERY AND IMAGES MODEL
+    <div class="inputdiv">
+        <label class="labelname">Category</label>
+        <div class="inputbreak">
+            <select id="ImageCategory" name="ImageCategory" class="dropdwon">
+                <option value="Landscape">== Select Category ==</option>
+                <option value="Landscape">Landscape</option>
+                <option value="Portrait">Portrait</option>
+                <option value="Wildlife">Wildlife</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Macro">Macro</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="inputDiv">
+        <label class="labelName">Image Description</label>
+        <div class="inputBreak">
+            <textarea id="ImageDescription_New" name="ImageDescription_New">@Model.Image.ImageDescription</textarea>
+        </div>
+    </div>
+
+    <div class="inputDiv">
+        <label class="labelName">Upload Your Image</label>
+        <div class="inputBreak">
+            <input type="file" name="uploadImage" id="uploadImage" class="fileUpload" />
+        </div>
+    </div>
+    //THIS IS A CHECKBOX TO SET FEATURED IMAGES
+    <div class="inputDiv">
+        <label class="labelName">Feature This Image</label>
+        <div class="inputBreak">
+            <input id="ImageFeature_new" name="ImageFeature_new" type="checkbox" value="true" />
+            <input id="ImageFeature_new" name="ImageFeature_new" type="hidden" value="false" />
+        </div>
+    </div>
+
+    <div class="inputDiv">
+        <input type="submit" value="Update Image" class="submitButton" />
+    </div>
+}

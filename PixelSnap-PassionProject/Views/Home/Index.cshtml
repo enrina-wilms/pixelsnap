@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PixelSnap_PassionProject.Models.Image>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="forModalFeatured">
+    <div class="jumbotron">
+        <h1>WELCOME TO PIXEL SNAP</h1>
+        <p class="lead">A place where you can share your creativity through your lenses!</p><br />
+        <div>
+            <span class="callToAction">@Html.ActionLink("Create Your Gallery", "Create", "gallery")</span>
+        </div>
+    </div>
+    <!--THIS WILL DISPLAY LIST OF FEATURED IMAGES ON HOMEPAGE WHRE USER CAN CLICK AND VIEW THE DETAILS ABOUT THIS IMAGE-->
+    <!--ORIGINALLY I WAS ATTEMPTING TO PUT A SLIDER OR SLIDSHOW BUT I DON'T HOW TO DO IT PROPERLY IF I NEED TO LOOP-->
+    <!--I ALSO TRY MODAL ON THIS BUT I THINK MY CODE IS WRONG AS ONLY ONE IMAGE I CAN CLICK AND SHOW A MODAL VIEW OTHER FEATURED IMAGES DOESN'T DO THAT-->
+    <!--i TRY TO ATTEMP LIGHTBOX FROM ONLINE RESOURCES AND STILL NOT WORKING-->
+    <h3 id="homeFeatured">FEATURED IMAGES</h3>
+    <!--THIS IS WHERE THE FEATURED IMAGE IS DISPLAYING-->
+    @foreach (var image in Model)
+    {
+        if (image.IsFeatured == true)
+        {
+            <div class="showImageCard">
+                <div class="showImageContainer">
+                    <a href="@Url.Action("Show/" + image.ImageID, "Image")">
+                        <img src="~/ImageUploads/images/@Url.Content(image.ImagePath)" class="viewFeaturedImage" id="viewFeaturedImage" data-lightbox="featured" />
+                    </a>
+                </div>
+            </div>
+        }
+    }
+
+</div>
+
+
+
+<!--THIS IS FOR MY MODAL VIEW THAT IS NOT WORKING ON THIS VIEW-->
+<!--
+<div id="viewFeaturedModal" class="viewFeaturedModal">
+    <span class="closeFeatured">&times;</span>
+    <img class="modalFeaturedImage" id="modalFeaturedImage">
+    <div id="modalFeaturedImageName">Model.ImageName</div>
+</div>
+-->

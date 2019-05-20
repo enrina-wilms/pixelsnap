@@ -1,0 +1,63 @@
+﻿@model PixelSnap_PassionProject.Models.Image
+@{
+    ViewBag.Title = "Show";
+}
+
+<div id="forModal">
+    <div class="headerContainer">
+        <h1>@Model.ImageName</h1>
+        <br />
+    </div>
+    <div class="createMethod">
+        <span class="actionLink">@Html.ActionLink("Back to Image Lists", "List", "Image")</span>
+        <span class="actionLink">@Html.ActionLink("Edit Image", "Edit/" + Model.ImageID)</span>
+        <span class="actionLink">@Html.ActionLink("Delete Image", "Delete/" + Model.ImageID)</span>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 viewDEtails">
+
+                <!--IF THE IMAGE IS SET TO BE FEATURED THIS WILL DISPLAY THE IMAGE-->
+                @if (Model.IsFeatured == true)
+                {
+                    <span class="isFeatureDetails">FEATURED IMAGE</span>
+                }
+                else
+                {
+
+                }
+                <h2>@Model.ImageName</h2>
+
+                <!--THIS PART IS A LINK WHERE YOU  CAN CLICK AND REDIRECT YOU TO GALLERY PAGE WHERE THE IMAGE BELONGS OR ASSOCIATED-->
+                <p><span class="viewDetailsSpan">Gallery: </span>
+                    <a href="@Url.Action("Show/" + @Model.gallery.GalleryID, "Gallery")">@Model.gallery.GalleryName</a>
+                </p>
+
+                <!--IF I HAVE MORE TIME I WILL WANT TO CREATE ANEW MODEL AND CONTROLLER FOR PHOTGRAPHER THAT WILL BE ASSOCIATED TO IAMGES AND GALLERIES-->
+                <!--THIS WILL BE ALSO A MANY TO MANY RELATIONSHIP CAUSE ONE PHOTGRAPHER CAN CONTRIBUTE IN UPLOADED MULTIPLE IMAGE IN ONE GALLERY-->
+                <p><span class="viewDetailsSpan">Photographer: </span></p>
+
+                <!--THE SAME AS PHOTOGARPHER I WANT TO CREATE A SEPARATE MODEL AND CONTROLLER FOR MY CATEGORIES AND WANT IT TO BE DYNAMIC-->
+                <p><span class="viewDetailsSpan">Category: </span><em><a href="#">@Model.ImageCategory</a></em></p>
+                <p><span class="viewDetailsSpan">Description: </span></p>
+                <div>
+                    <p>@Model.ImageDescription</p>
+                </div>
+            </div>
+            <div class="col-md-8 viewImageColumn">
+                <img src="~/ImageUploads/images/@Model.ImagePath" class="viewImage" id="viewImage" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--THIS IS MODAL VIEW FOR IMAGE-->
+<!--ORIGNALLY I WANT TO DO SLIDER BUT COULDN'T GET IT RIGHT-->
+<div id="viewModal" class="viewModal">
+    <span class="close">&times;</span>
+    <img class="modalImage" id="modalImage">
+    <div id="modalImageName">@Model.ImageName</div>
+</div>
+
+

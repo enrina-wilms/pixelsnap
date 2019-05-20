@@ -1,0 +1,47 @@
+﻿@model PixelSnap_PassionProject.Models.ViewModels.GalleryEdit
+@{
+    ViewBag.Title = "Edit";
+}
+<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
+<h2>Update Gallery</h2>
+
+<form method="POST" action="/Gallery/Edit/@Model.gallery.GalleryID">
+
+    <div class="inputDiv">
+        <label class="labelName">Gallery Name</label>
+        <div class="inputBreak">
+            <input id="GalleryName_New" name="GalleryName_New" value="@Model.gallery.GalleryName" />
+        </div>
+    </div>
+    <!--HOW TO KEEP THE SELETED VALUE FOR MY DROPDOWN LIST? -->
+    <!--THIS PART I WANT TO MAKE ANOTHER MODEL AND CONTROLLER IN THE FUTURE -->
+    <div class="inputdiv">
+        <label class="labelname">Category</label>
+        <div class="inputbreak">
+            <select id="GalleryCategory" name="GalleryCategory" class="dropdwon" onchange="">
+                <option value="Landscape">== Select Category ==</option>
+                <option value="Landscape">Landscape</option>
+                <option value="Portrait">Portrait</option>
+                <option value="Wildlife">Wildlife</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Macro">Macro</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="inputDiv">
+        <label class="labelName">Gallery Description</label>
+        <div class="inputBreak">
+            <textarea id="GalleryDescription_New" name="GalleryDescription_New" Columns="1000" Rows="10" TextMode="multiline">@Model.gallery.GalleryDescription</textarea>
+        </div>
+        <script>
+            CKEDITOR.replace('GalleryDescription_New');
+        </script>
+    </div>
+
+    <div class="inputDiv">
+        <input type="submit" value="Update Gallery" class="submitButton" />
+    </div>
+</form>

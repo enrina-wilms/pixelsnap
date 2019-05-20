@@ -1,0 +1,78 @@
+﻿@model IEnumerable<PixelSnap_PassionProject.Models.Gallery>
+@{
+    ViewBag.Title = "Create";
+}
+<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
+<h2>Share Image</h2>
+
+@using (Html.BeginForm("Create", "Image", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="inputDiv">
+        <label class="labelName">Image Name</label>
+        <div class="inputBreak">
+            <input id="ImageName_new" name="ImageName_new" />
+        </div>
+    </div>
+    <!--THIS WILL REPRESENT ONE TO MANY RELATIONSHIP AS I AM CONNECTING IMAGE TO ONE GALLERY-->
+    <div class="inputDiv">
+        <label class="labelName">Gallery</label>
+        <div class="inputBreak">
+            <select id="ImageGallery_New" name="ImageGallery_New">
+                @foreach (var gallery in Model)
+                {
+                    <option value="@gallery.GalleryID">@gallery.GalleryName</option>
+                }
+            </select>
+        </div>
+    </div>
+    <!--THIS WILL BE A FUTURE CONTROLLER AND MODEL THAT WIL BE CONNECTED TO GALLERY AND IMAGES-->
+    <div class="inputdiv">
+        <label class="labelname">Category</label>
+        <div class="inputbreak">
+            <select id="ImageCategory" name="ImageCategory" class="dropdwon" onchange="">
+                <option value="Landscape">== Select Category ==</option>
+                <option value="Landscape">Landscape</option>
+                <option value="Portrait">Portrait</option>
+                <option value="Wildlife">Wildlife</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Macro">Macro</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+    </div>
+    <div class="inputDiv">
+        <label class="labelName">Image Description</label>
+        <div class="inputBreak">
+            <textarea id="ImageDescription_New" name="ImageDescription_New" Columns="1000" Rows="10" TextMode="multiline"></textarea>
+            @*<script>
+                CKEDITOR.replace('ImageDescription_New');
+            </script>*@
+        </div>
+    </div>
+    @*<div class="inputDiv">
+        <label class="labelName">Image Description</label>
+        <div class="inputBreak">
+            <textarea id="ImageDescription_New" name="ImageDescription_New"></textarea>
+        </div>
+    </div>*@
+
+    <div class="inputDiv">
+        <label class="labelName">Upload Your Image</label>
+        <div class="inputBreak">
+            <input type="file" name="uploadImage" id="uploadImage" class="fileUpload" />
+        </div>
+    </div>
+    <!--TO SET A FALSE VALUE I ADDED ANOTHER HIDDEN INPUT FOR THE SETING A FEATURED IMAGE SAME ON THE EDIT.CSHTML VIEW-->
+    <div class="inputDiv">
+        <label class="labelName">Feature This Image</label>
+        <div class="inputBreak">
+            <input id="ImageFeature_new" name="ImageFeature_new" type="checkbox" value="true" />
+            <input id="ImageFeature_new" name="ImageFeature_new" type="hidden" value="false" />
+        </div>
+    </div>
+
+    <div class="inputDiv">
+        <input type="submit" value="Share Image" class="submitButton" />
+    </div>
+}

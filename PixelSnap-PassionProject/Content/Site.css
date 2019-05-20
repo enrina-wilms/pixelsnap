@@ -1,0 +1,105 @@
+﻿
+body {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: #171717;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    /*padding-left: 15px;
+    padding-right: 15px;*/
+    margin: 30px auto;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+.jumbotron{
+    background: #2d2d2d;
+}
+/* Set width on the form input elements since they're 100% wide by default */
+.submitButton {
+    background: #ee5253;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+.submitButton:hover {
+    background-color: #fff;
+    color: #2d2d2d;
+}
+
+.inputDiv {
+    /*margin: 0 auto!important;*/
+    padding: 20px 0;
+}
+.inputBreak{
+    /*margin: 0 auto!important;*/
+    padding:10px 0;
+}
+select {
+    padding:10px 0;
+    background: #2d2d2d;
+    width: 100%;
+    color: #fff;
+    font-size:20px;
+}
+.fileUpload + label {
+    color: #fff;
+    background:#2d2d2d;
+}
+option {
+    padding: 10px 0;
+    background: #fff;
+    color: #2d2d2d;
+}
+
+textarea {
+    margin: 0 auto;
+    width: 100%;
+    color: #2d2d2d;
+}
+input{
+    margin: 0 auto;
+    padding: 15px;
+    width: 100%;
+    color: #2d2d2d;
+}
+.labelName{
+    font-size:20px;
+}
+/*.form-wrapper {
+    width: 70%;
+    margin: 0 auto;
+}*/
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+    font-size: 20px;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #ee5253;
+}
+
+.navbar-brand ,.navbar-inverse{
+    color: #fff;
+    font-size: 25px;
+}
+
+input[type="file"] {
+    color: #fff;
+    display:inline-block;
+}
+.centerDiv {
+    margin: 0 auto !important;
+}
+

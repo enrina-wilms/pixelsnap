@@ -1,0 +1,77 @@
+﻿@model IEnumerable<PixelSnap_PassionProject.Models.Image>
+@{
+    ViewBag.Title = "Share Image";
+}
+
+<div id="forListModal">
+    <div class="headerContainerMain">
+        <h1>Share Your Image</h1>
+        <br />
+    </div>
+    <div class="createMethod">
+        <span class="actionLink">@Html.ActionLink("Back to Gallery List", "List", "Gallery")</span>
+        <span class="actionLink">@Html.ActionLink("Share Image", "Create", "Image")</span>
+    </div>
+
+    <div class="IsFeatured">
+        <h3>Featured Images</h3>
+        <!--THIS CONTAINER IS WHERE THE FEATURED IMAGES WILL BE DISPLAYED-->
+        @foreach (var image in Model)
+        {
+            if (image.IsFeatured == true)
+            {
+                <div class="showImageCard">
+                    <div>
+                        <h2 class="showLabel">@Html.ActionLink(image.ImageName, "Show/" + image.ImageID)</h2>
+                    </div>
+                    <div class="showImageContainer">
+                        <a href="@Url.Action("Show/" + image.ImageID)">
+                            <img src="~/ImageUploads/images/@Url.Content(image.ImagePath)" class="showImage" id="viewListImage" />
+                        </a>
+                    </div>
+
+                    <div class="showLink">
+                        <a href="@Url.Action("Show/" + image.ImageID)" class="fas fa-eye" title="View"></a>
+                        <a href="@Url.Action("Edit/" + image.ImageID)" class="fas fa-edit" title="Edit"></a>
+                        <a href="@Url.Action("Delete/" + image.ImageID)" class="fas fa-trash" title="Delete"></a>
+                    </div>
+
+                </div>
+            }
+        }
+    </div>
+
+    <div class="recentUpload">
+        <!--THIS WILL DISPLAY IMAGES THAT WAS UPLOADED-->
+        <p>Uploaded Images</p>
+        @foreach (var image in Model)
+        {
+
+            <div class="showImageCardRecent">
+                <div class="showImageContainerRecent">
+                    <a href="@Url.Action("Show/" + image.ImageID)">
+                        <img src="~/ImageUploads/images/@Url.Content(image.ImagePath)" class="showImageRecent" id="viewListImage" />
+                    </a>
+                </div>
+
+                <div>
+                    <h2 class="showLabelRecent">@Html.ActionLink(image.ImageName, "Show/" + image.ImageID)</h2>
+                </div>
+
+                <div class="showLinkRecent">
+                    <a href="@Url.Action("Show/" + image.ImageID)" class="fas fa-eye" title="View"></a>
+                    <a href="@Url.Action("Edit/" + image.ImageID)" class="fas fa-edit" title="Edit"></a>
+                    <a href="@Url.Action("Delete/" + image.ImageID)" class="fas fa-trash" title="Delete"></a>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
+@*<div id="viewListModal" class="viewListModal">
+    <span class="close">&times;</span>
+    <img class="modalListImage" id="modalListImage">
+    <div id="modalListImageName">Model.ImageName</div>
+</div>*@
+
+

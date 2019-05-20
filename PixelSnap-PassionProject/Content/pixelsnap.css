@@ -1,0 +1,507 @@
+﻿/* FOR GENERAL STYLES*/
+html {
+    font-family: 'Quicksand', sans-serif;
+}
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0 auto;
+    font-size: 20px;
+    color: #fff;
+}
+.isFeatureDetails {
+    color: #fff;
+    background: #ee5253;
+    padding:10px;
+}
+.actionLink {
+    border-right: 1px solid white;
+    padding-right: 10px;
+}
+.actionLink:last-child {
+    border-right:none;
+    padding-right: 0;
+    padding-left: 5px;
+}
+.headerContainerMain {
+    padding-top: 20px;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+}
+.headerContainerMain h1{
+    color: #2d2d2d;
+    font-weight: bold;
+}
+.headerContainer {
+    padding-top: 20px;
+    width: 100%;
+    background: #ee5253;
+    border-radius: 5px;
+}
+h1{
+    margin:0;
+    color:#fff;
+}
+.navbar-nav li a {
+    color: #ee5253;
+}
+
+.navbar-brand a, .navbar-inverse a{
+    color: #fff;
+    font-size: 25px;
+}
+::placeholder {
+    color: #2d2d2d;
+}
+.jumbotron {
+    background: #ee5253;
+}
+.jumbotron a {
+    background: #2d2d2d;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+.jumbotron a:hover {
+    background: #fff;
+    color: #2d2d2d;
+}
+input[type="file"] {
+    color: #fff;
+    background: #EE5253;
+}
+
+.footer {
+    clear: both;
+    padding: 20px;
+    color: #d3d3d3;
+}
+.date{
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+    border-top: 1px solid #fff;
+    padding-top: 10px;
+}
+.date span{
+    text-align: center;
+    color: #fff;
+}
+#homeFeatured {
+    background: #fff;
+    width: 400px;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    color: #EE5253;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 5px;
+}
+#viewFeaturedImage{
+    cursor: pointer;
+    transition: 0.3s;
+}
+#viewFeaturedImage:hover {
+    opacity: 0.6;
+}
+/* FOR GENERAL STYLES*/
+/* SHOW IAMGE CARD LAYOUT FOR LIST VIEW */
+.showImageCard {
+    float: left;
+    width: 320px;
+    background: #2d2d2d;
+    margin: 30px;
+}
+
+.showLabel {
+    color: #fff;
+    background: #ee5253;
+    padding: 15px;
+    font-size: 20px;
+    margin: 0;
+    text-transform:uppercase;
+    font-weight: bold;
+}
+
+.showImage {
+    width: 320px;
+    height: 270px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.showImage:hover {
+    opacity: 0.6;
+}
+.showLink {
+    color: #fff;
+    background: #ee5253;
+    padding: 0 15px;
+    font-size: 20px;
+}
+.showLink a{
+    color: #fff;
+    text-decoration: none;
+    background: #ee5253;
+    padding: 15px;
+    font-size: 20px;
+}
+.showLink a:hover{
+    color: #222f3e;
+}
+.showLabel a {
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+}
+.showLabel a:hover {
+    color:#222f3e;
+    text-decoration: none;
+    
+}
+.IsFeatured{
+    display:inline-block;
+}
+/* SHOW IAMGE CARD LAYOUT FOR LIST VIEW */
+
+/* SHOW LIST OF GALLERIES */
+/* SHOW IAMGE CARD LAYOUT FOR LIST VIEW */
+.galleryList{
+    display: inline-block;
+}
+.showImageCardGallery {
+    float: left;
+    width: 500px;
+    background: #2d2d2d;
+    margin: 30px;
+    color: #2d2d2d;
+}
+
+.showLabelGallery {
+    color: #2d2d2d;
+    background: #fff;
+    padding: 15px;
+    font-size: 20px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.showImageGallery {
+    width: 500px;
+    height: 270px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.showImageGallery:hover {
+    opacity: 0.6;
+}
+.showLinkGallery {
+    color: #2d2d2d;
+    background: #fff;
+    padding: 0 15px;
+    font-size: 20px;
+}
+.showLinkGallery a{
+    color: #2d2d2d;
+    text-decoration: none;
+    background: #fff;
+    padding: 15px;
+    font-size: 20px;
+}
+.showLinkGallery a:hover{
+    color: #EE5253;
+}
+.showLabelGallery a {
+    text-decoration: none;
+    color: #2d2d2d;
+    text-align: center;
+    font-size: 20px;
+}
+.showLabelGallery a:hover {
+    color: #EE5253;
+    text-decoration: none;
+}
+/* SHOW LIST OF GALLERIES */
+
+/* RECENT UPLOADED FILES STYLES */
+.showImageCardRecent {
+    float: left;
+    width: 200px;
+    background: #2d2d2d;
+    margin: 12px;
+}
+
+.showLabelRecent {
+    color: #2d2d2d;
+    background: #fff;
+    padding: 5px;
+    font-size: 20px;
+    margin: 0;
+    text-transform:uppercase;
+    font-weight:bold;
+}
+
+.showImageRecent {
+    width: 200px;
+    height: 170px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.showImageRecent:hover{
+    opacity: 0.6;
+}
+.showLinkRecent {
+    color: #fff;
+    background: #fff;
+    font-size: 15px;
+}
+.showLinkRecent a{
+    color: #2d2d2d;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 15px;
+}
+.showLinkRecent a:hover{
+    color: #ee5253;
+}
+.showLabelRecent a {
+    text-decoration: none;
+    color: #2d2d2d;
+    text-align: center;
+    font-size: 15px;
+}
+.showLabelRecent a:hover {
+    color:#ee5253;
+    text-decoration: none;
+    
+}
+.recentUpload{
+    display: block;
+    border-top: 2px solid #fff;
+    padding-top:10px;
+}
+/* RECENT UPLOADED FILES STYLES */
+
+.createMethod{
+    margin: 0 20px 20px 20px;
+    background-color: #2d2d2d;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+.createMethod a{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+.createMethod a:hover{
+    color: #ee5253;
+    text-decoration: none;
+}
+
+.viewImage {
+    width: 100%;
+    object-fit: fill;
+    cursor:pointer;
+    transition: 0.3s;
+}
+.viewImage:hover{
+    opacity: 0.6;
+}
+.category {
+    text-align: center;
+    padding: 10px 20px;
+    background: #ee5253;
+    color: #fff;
+    float: left;
+}
+.viewImageCont{
+    width:550px;
+    display:inline-block;
+}
+.viewImageContainer {
+    float: left;
+    margin: 20px;
+    width: 500px;
+    clear: both;
+}
+.viewDEtails {
+    font-style:italic;
+    padding: 20px;
+    text-align: left;
+    background: #222222;
+}
+.viewDEtails h2{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.viewDetailsSpan {
+    color: #949494;
+}
+#uploadImage {
+    text-align: center;
+}
+.modalImage{
+    width:200px;
+}
+.featured {
+    padding: 10px;
+    background: #576574;
+}
+.viewImageColumn{
+    object-fit:cover;
+}
+.viewDEtails a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+.viewDEtails a:hover {
+    color: #ee5253;
+}
+
+/* MODAL SHOW VIEW IMAGE STYLES*/
+.viewModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    background-color: #2d2d2d;
+}
+
+.modalImage {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 768px;
+}
+
+#modalImageName {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 768px;
+    text-align: center;
+    color: #2d2d2d;
+    padding: 10px 0;
+    background: white;
+    font-weight: bold
+}
+
+.modalImage, #modalImageName {
+    animation-name: zoom;
+    animation-duration: 0.5s;
+}
+@keyframes zoom{
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+.close{
+    position: absolute;
+    top: 80px;
+    right: 300px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.close::after hover, .close::after focus{
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+/*MODAL SHOW VIEW IMAGE STYLES*/
+
+/*MODAL SHOW HOMEPAGE FEATURED IMAGE STYLES*/
+/* MODAL VIEW IS NOT WORKING FOR FEATURED IMAGE */
+
+#viewFeaturedImage {
+    cursor: pointer;
+    transition: 0.3s;
+    width: 320px;
+    height: 270px;
+    object-fit: cover;
+}
+.viewFeaturedModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    background-color: #2d2d2d;
+}
+
+.modalFeaturedImage {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 768px;
+}
+
+#modalFeaturedImageName {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 768px;
+    text-align: center;
+    color: #2d2d2d;
+    padding: 10px 0;
+    background: white;
+    font-weight: bold
+}
+
+.modalFeaturedImage, #modalFeaturedImageName {
+    animation-name: zoom;
+    animation-duration: 0.5s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+.closeFeatured {
+    position: absolute;
+    top: 80px;
+    right: 300px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.closeFeatured::after hover, .closeFeatured::after focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*MODAL SHOW HOMEPAGE FEATURED IMAGE STYLES*/
+
